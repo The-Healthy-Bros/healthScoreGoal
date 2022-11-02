@@ -95,5 +95,4 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 
 ## Wireframes
 
-[Add picture of your hand sketched wireframes in this section]
 <img src="WireFrame.jpg" width=600>
