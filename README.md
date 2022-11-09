@@ -17,11 +17,11 @@
 ### Description
 
 Our app is a general heath app made to keep our users bodies and minds in shape. Many features such as sleep and calorie counter will be used to achieve this!
-Excercise chart will have multiple movements set specifically for the user to remember.
+Exercise chart will have multiple movements set specifically for the user to remember.
 Calorie counter allows users to input whatever they choose to make sure they're getting an ideal intake.
 Weekly activity keeps track of all the users activity during the week and compares them.
 Other things such as exercise details and more will be added in.
-Additonal:
+Additional:
 Sleep counter helps users keep track of their ZZZ's and assist them in getting the most beauty sleep they can.
 
 ### App Evaluation
@@ -38,8 +38,8 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 
 **Required Features**
 
-* Excercise chart
-* Excercise Examples and details
+* Exercise chart
+* Exercise Examples and details
 * Calorie counter
 * Food recommendations 
 * Weekly Activity & Exercise Details
