@@ -96,3 +96,7 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 ## Wireframes
 
 <img src="WireFrame.jpg" width=600>
+
+Video Showcase 
+
+https://i.imgur.com/AWcvVet.gif
