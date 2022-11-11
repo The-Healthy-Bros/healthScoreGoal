@@ -11,15 +11,25 @@
         android:id="@+id/tvExercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="This is the Exercise Fragment!"
         android:text="This is the Exercise Fragment!"
         android:textColor="@color/black"
         android:textSize="29sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.465" />
+
+    <EditText
+        android:id="@+id/calorieBurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="500dp"
+        android:hint="Enter Calories Burnt"
+        android:inputType="number"
+        android:textSize="30sp" />
 
 </FrameLayout>
