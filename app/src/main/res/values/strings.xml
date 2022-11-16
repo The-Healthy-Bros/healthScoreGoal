@@ -6,4 +6,15 @@
     <string name="settings">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sleep">Sleep</string>
+    <string name="click_this_to_delete_sleep_data" />
+    <string name="data_deletion" />
+    <string name="click_on_this_to_delete_all_data" />
+    <string name="enter_the_day_here">Enter the day here.</string>
+    <string name="enter_hours_slept_here">Enter hours slept here.</string>
+    <string name="day">Day:</string>
+    <string name="hours_slept">Hours slept:</string>
+    <string name="enter_hours_slept">Enter Hours Slept</string>
+    <string name="add_new_fitness_data">Add New Fitness Data</string>
+    <string name="delete_data"><![CDATA[Delete Data -->]]></string>
 </resources>
