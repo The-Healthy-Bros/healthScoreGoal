@@ -102,5 +102,6 @@ First week update gif:
 <img src="https://i.imgur.com/AWcvVet.gif" title='First update' width='' alt='First gif update'>
 
 Second week update gif:
-<img src="healthWeek2.gif" title="Second Update" width'' alt= "Second gif update">
+
+<img src="healthWeek2.gif" title="Second Update" width'' alt="Second gif update">
 
