@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    android:background="#090633">
 
     <Button
         android:id="@+id/sleepButton"
@@ -24,6 +25,7 @@
         android:layout_marginTop="12dp"
         android:text="@string/hours_slept"
         android:textSize="20sp"
+        android:textColor='@color/white'
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +38,7 @@
         android:text="@string/day"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor='@color/white'
         app:layout_constraintEnd_toStartOf="@+id/eTDay"
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +55,8 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textSize="20sp"
+        android:textColorHint='#9a9a9c'
+        android:textColor='@color/white'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,6 +70,8 @@
         android:hint="@string/enter_the_day_here"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColorHint='#9a9a9c'
+        android:textColor='@color/white'
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTHoursSlept" />

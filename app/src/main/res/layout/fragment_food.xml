@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FoodFrag">
+    tools:context=".FoodFrag"
+    android:background="#a0c7fa">
 
     <TextView
         android:id="@+id/tvFood"
