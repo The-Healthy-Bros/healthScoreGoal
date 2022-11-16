@@ -103,5 +103,5 @@ First week update gif:
 
 Second week update gif:
 
-<img src="healthWeek2.gif" title="Second Update" width'' alt="Second gif update">
+<img src="healthWeek2.gif" title='Second update' width='' alt='Second gif update'>
 
