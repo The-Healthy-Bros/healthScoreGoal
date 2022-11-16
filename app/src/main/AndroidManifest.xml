@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.healthscoregoal">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".FitnessApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HealthScoreGoal"
         tools:targetApi="31">
+        <activity
+            android:name=".DeleteActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
