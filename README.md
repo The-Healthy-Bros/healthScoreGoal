@@ -97,6 +97,6 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 
 <img src="WireFrame.jpg" width=600>
 
-Video Showcase
+Video Showcase 
 
-<img src='https://i.imgur.com/AWcvVet.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://i.imgur.com/AWcvVet.gif
