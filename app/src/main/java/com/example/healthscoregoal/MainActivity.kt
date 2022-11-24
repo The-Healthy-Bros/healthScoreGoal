@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     // For controlling the bottom nav view
     private val fitness = mutableListOf<Fitness>()
     lateinit var newB: Button
-    lateinit var delB: Button
+    //lateinit var delB: Button
     private lateinit var bottomNavView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         // Linking the bottom navigation view
         bottomNavView = findViewById(R.id.bottom_navigation)
 
-        val newB = findViewById<Button>(R.id.fitButton)
-        val delB = findViewById<Button>(R.id.delButton)
+        newB = findViewById<Button>(R.id.fitButton)
+        //delB = findViewById<Button>(R.id.delButton)
 
         // Handle Navigation Selection
         bottomNavView.setOnItemSelectedListener { item ->
@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent (this, DetailActivity::class.java)
             this.startActivity(intent)
         }
-        delB.setOnClickListener {
-            val intent = Intent (this, DeleteActivity::class.java)
-            this.startActivity(intent)
-        }
+//        delB.setOnClickListener {
+//            val intent = Intent (this, DeleteActivity::class.java)
+//            this.startActivity(intent)
+//        }
 
     }
 
