@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 private const val TAG = "SleepFrag/"
@@ -46,6 +48,29 @@ class SleepFrag : Fragment() {
                     }
                 }
         }
+        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                // this method is called
+                // when the item is moved.
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+
+                // below line is to get the position
+                // of the item at that position.
+                val position = viewHolder.absoluteAdapterPosition
+                lifecycleScope.launch(Dispatchers.IO) {
+                    (activity?.application as FitnessApplication).db.fitnessDao().delete(sleep[position].toEntity())
+                }
+            }
+            // at last we are adding this
+            // to our recycler view.
+        }).attachToRecyclerView(sRV)
         return view
     }
 }
