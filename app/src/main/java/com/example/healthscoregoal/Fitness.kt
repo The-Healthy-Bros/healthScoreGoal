@@ -5,6 +5,7 @@ data class Fitness(
     val dayText: String?,
     val hoursSlept: Int?
 ): java.io.Serializable {
+
     fun toEntity(): FitnessEntity{
         return FitnessEntity(
             id = this.id,
