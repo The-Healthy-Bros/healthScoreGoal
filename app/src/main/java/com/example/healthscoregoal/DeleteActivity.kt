@@ -15,8 +15,8 @@ class DeleteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delete)
 
-        val dSB = findViewById<Button>(R.id.delSleepButton)
-        val dAB = findViewById<Button>(R.id.delAllButton)
+        dSB = findViewById<Button>(R.id.delSleepButton)
+        dAB = findViewById<Button>(R.id.delAllButton)
 
 
 //       dSB.setOnClickListener{

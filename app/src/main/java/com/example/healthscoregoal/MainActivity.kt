@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
         // Linking the bottom navigation view
         bottomNavView = findViewById(R.id.bottom_navigation)
 
-        val newB = findViewById<Button>(R.id.fitButton)
-        val delB = findViewById<Button>(R.id.delButton)
+        newB = findViewById<Button>(R.id.fitButton)
+        delB = findViewById<Button>(R.id.delButton)
 
         // Handle Navigation Selection
         bottomNavView.setOnItemSelectedListener { item ->
