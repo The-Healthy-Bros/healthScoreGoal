@@ -44,7 +44,7 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 - [ ] Delete Calorie data (all and specifics)
 - [ ] Food recommendations & details
 - [x] Sleep Tracker
-- [ ] Delete Sleep data (all and specifics)
+- [x] Delete Sleep data (all and specifics)
 - [ ] User Page Overview
 - [ ] All data delete
 
@@ -107,4 +107,8 @@ First week update gif:
 Second week update gif:
 
 <img src="healthWeek2.gif" title='Second update' width='' alt='Second gif update'>
+
+Third week update gif:
+
+<img src="healthWeek3.gif" title='Third update' width='' alt='Third gif update'>
 
