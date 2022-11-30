@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+
+private const val apiKey = BuildConfig.apiKey
 class FoodFrag : Fragment() {
     // TODO: Rename and change types of parameters
 

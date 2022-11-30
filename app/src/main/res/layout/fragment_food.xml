@@ -7,31 +7,10 @@
     tools:context=".FoodFrag"
     android:background="#a0c7fa">
 
-    <TextView
-        android:id="@+id/tvFood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="This is the Food Fragment!"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465"  />
-
-    <EditText
-        android:id="@+id/calorieIntake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="500dp"
-        android:hint="Consumed Calories"
-        android:inputType="number"
-        android:textSize="30sp" />
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/foodRV"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
 
 
 </FrameLayout>
