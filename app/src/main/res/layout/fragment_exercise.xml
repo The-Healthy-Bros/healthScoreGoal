@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="500dp"
-        android:hint="Enter Calories Burnt"
+        android:hint="🔥 Enter Calories Burnt"
         android:inputType="number"
         android:textSize="30sp" />
 
