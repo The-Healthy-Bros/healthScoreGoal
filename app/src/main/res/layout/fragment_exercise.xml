@@ -5,32 +5,27 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ExerciseFrag"
-    android:background="#faa0a0">
+    android:background="@drawable/workout_image">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tvExercise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="This is the Exercise Fragment!"
-        android:text="This is the Exercise Fragment!"
-        android:textColor="@color/black"
-        android:textSize="29sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465" />
-
     <EditText
         android:id="@+id/calorieBurn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="500dp"
-        android:hint="🔥 Enter Calories Burnt"
+        android:layout_marginTop="580dp"
         android:inputType="number"
-        android:textSize="30sp" />
+        android:text="Enter Calories Burnt"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnCal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="650dp"
+        android:text="🔥  Enter Burnt Calories  🔥" />
 
 </FrameLayout>
