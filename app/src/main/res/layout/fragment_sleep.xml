@@ -10,7 +10,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sleepRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp"
         tools:listitem="@layout/sleep_item" />
+
+    <Button
+        android:id="@+id/fitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new_fitness_data"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="95dp"
+        />
 
 </FrameLayout>

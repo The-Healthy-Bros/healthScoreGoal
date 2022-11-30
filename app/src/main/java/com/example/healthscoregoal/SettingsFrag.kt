@@ -24,6 +24,7 @@ class SettingsFrag : Fragment() {
 
         delButton = view.findViewById(R.id.buttonDeleteSleep)
 
+
         delButton.setOnClickListener {
             val intent = Intent(it.context, DeleteActivity::class.java)
             this.startActivity(intent)
