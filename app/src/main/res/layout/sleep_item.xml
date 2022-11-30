@@ -16,7 +16,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/enterdHoursSlept"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tVHS" />
 
@@ -25,11 +25,11 @@
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:text="Day:"
+        android:textColor='@color/white'
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor='@color/white'
         app:layout_constraintEnd_toStartOf="@+id/enterdDayTV"
-        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
