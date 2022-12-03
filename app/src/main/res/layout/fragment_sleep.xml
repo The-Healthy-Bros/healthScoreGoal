@@ -15,7 +15,7 @@
         tools:listitem="@layout/sleep_item" />
 
     <Button
-        android:id="@+id/fitButton"
+        android:id="@+id/sleepButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_new_fitness_data"
