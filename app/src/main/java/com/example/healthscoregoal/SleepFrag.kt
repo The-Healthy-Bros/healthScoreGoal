@@ -1,10 +1,12 @@
 package com.example.healthscoregoal
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -19,6 +21,7 @@ class SleepFrag : Fragment() {
     private val sleep = mutableListOf<Fitness>()
     lateinit var sRV: RecyclerView
     lateinit var sleepAdapter: SleepAdapter
+    lateinit var newB: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -71,6 +74,11 @@ class SleepFrag : Fragment() {
             // at last we are adding this
             // to our recycler view.
         }).attachToRecyclerView(sRV)
+        newB = view.findViewById(R.id.fitButton)
+        newB.setOnClickListener {
+            val intent = Intent(it.context, DetailActivity::class.java)
+           this.startActivity(intent)
+       }
         return view
     }
 }
