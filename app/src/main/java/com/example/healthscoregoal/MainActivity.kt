@@ -86,11 +86,12 @@ class MainActivity : AppCompatActivity() {
         }
         bottomNavView.selectedItemId = R.id.main_menu
 
+        jB = findViewById(R.id.fitButton)
 
-//        jB.setOnClickListener {
-//            val intent = Intent (this, DetailActivity::class.java)
-//            this.startActivity(intent)
-//        }
+        jB.setOnClickListener {
+            val intent = Intent (this, DetailActivity::class.java)
+            this.startActivity(intent)
+        }
 //        delB.setOnClickListener {
 //            val intent = Intent (this, DeleteActivity::class.java)
 //            this.startActivity(intent)

@@ -21,7 +21,6 @@ class SleepFrag : Fragment() {
     private val sleep = mutableListOf<Fitness>()
     lateinit var sRV: RecyclerView
     lateinit var sleepAdapter: SleepAdapter
-    lateinit var addB: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -74,11 +73,6 @@ class SleepFrag : Fragment() {
             // at last we are adding this
             // to our recycler view.
         }).attachToRecyclerView(sRV)
-        addB = view.findViewById(R.id.sleepButton1)
-        addB.setOnClickListener {
-            val intent = Intent(it.context, DetailActivity::class.java)
-           this.startActivity(intent)
-       }
         return view
     }
 }
