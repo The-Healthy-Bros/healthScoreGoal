@@ -16,8 +16,11 @@ data class FitnessEntity(
 @Entity(tableName = "cal_table")
 data class CalEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @ColumnInfo(name = "foodNames") val foodsEn: String?,
+    @ColumnInfo(name = "sugars") val sugarsEn: Int?,
+    @ColumnInfo(name = "carbs") val carbsEn: Int?,
     @ColumnInfo(name = "calories") val caloriesEn: Int?,
-    @ColumnInfo(name = "food") val foodEn: String?
+
 )
 
 // Exercise table

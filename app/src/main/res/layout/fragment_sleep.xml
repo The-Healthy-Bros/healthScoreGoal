@@ -9,10 +9,19 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sleepRV"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="65dp"
         tools:listitem="@layout/sleep_item" />
+    <TextView
+        android:id="@+id/sleepJTV"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sleep Journal:" />
 
     <Button
         android:id="@+id/sleepButton1"

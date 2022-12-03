@@ -17,4 +17,5 @@
     <string name="enter_hours_slept">😴 Enter Hours Slept</string>
     <string name="add_new_fitness_data">Add New Fitness Data</string>
     <string name="delete_data"><![CDATA[Delete Data -->]]></string>
+    <string name="add_new_journal_data" />
 </resources>

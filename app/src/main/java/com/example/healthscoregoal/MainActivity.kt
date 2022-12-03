@@ -16,8 +16,8 @@ private const val TAG = "MainActivity/"
 class MainActivity : AppCompatActivity() {
     // For controlling the bottom nav view
     private val fitness = mutableListOf<Fitness>()
-    //lateinit var newB: Button
-    //lateinit var delB: Button
+    private val food = mutableListOf<Foods>()
+    lateinit var jB: Button
     private lateinit var bottomNavView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         // Linking the bottom navigation view
         bottomNavView = findViewById(R.id.bottom_navigation)
 
-        //newB = findViewById<Button>(R.id.fitButton)
+        //newB = findViewById<Button>(R.id.fitButton2)
         //delB = findViewById<Button>(R.id.delButton)
 
         // Handle Navigation Selection
@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
 
 
             val sleepInfo = intent.getSerializableExtra("EXTRA_ENTRY") as Fitness?
-
             if(sleepInfo != null) {
                 Log.d(TAG, "got extra")
                 lifecycleScope.launch(Dispatchers.IO) {
@@ -66,12 +65,29 @@ class MainActivity : AppCompatActivity() {
                 intent.removeExtra("EXTRA_ENTRY")
             }
 
+            val foodInfo = intent.getSerializableExtra("FOOD_ENTRY") as Foods?
+            if(foodInfo != null) {
+                Log.d(TAG, "got extra")
+                lifecycleScope.launch(Dispatchers.IO) {
+                    (application as FitnessApplication).db.fitnessDao().insertCal(
+                        CalEntity(
+                            id = foodInfo.id,
+                            foodsEn = foodInfo.foodName,
+                            sugarsEn = foodInfo.sugars,
+                            carbsEn = foodInfo.carbs,
+                            caloriesEn = foodInfo.calories
+                        )
+                    )
+                }
+                intent.removeExtra("FOOD_ENTRY")
+            }
+
             true
         }
         bottomNavView.selectedItemId = R.id.main_menu
 
 
-//        newB.setOnClickListener {
+//        jB.setOnClickListener {
 //            val intent = Intent (this, DetailActivity::class.java)
 //            this.startActivity(intent)
 //        }

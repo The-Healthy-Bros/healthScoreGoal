@@ -26,7 +26,7 @@ interface FitnessDAO {
     fun getAllCal(): Flow<List<CalEntity>>
 
     @Insert
-    fun insert(calorie: CalEntity)
+    fun insertCal(calorie: CalEntity)
 
     @Delete
     fun deleteCal(calorie: CalEntity)
