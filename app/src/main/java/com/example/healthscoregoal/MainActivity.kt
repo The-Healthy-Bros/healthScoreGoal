@@ -16,6 +16,7 @@ private const val TAG = "MainActivity/"
 class MainActivity : AppCompatActivity() {
     // For controlling the bottom nav view
     private val fitness = mutableListOf<Fitness>()
+    private val food = mutableListOf<Foods>()
     lateinit var newB: Button
     //lateinit var delB: Button
     private lateinit var bottomNavView: BottomNavigationView
@@ -51,7 +52,6 @@ class MainActivity : AppCompatActivity() {
 
 
             val sleepInfo = intent.getSerializableExtra("EXTRA_ENTRY") as Fitness?
-
             if(sleepInfo != null) {
                 Log.d(TAG, "got extra")
                 lifecycleScope.launch(Dispatchers.IO) {
@@ -64,6 +64,23 @@ class MainActivity : AppCompatActivity() {
                     )
                 }
                 intent.removeExtra("EXTRA_ENTRY")
+            }
+
+            val foodInfo = intent.getSerializableExtra("FOOD_ENTRY") as Foods?
+            if(foodInfo != null) {
+                Log.d(TAG, "got extra")
+                lifecycleScope.launch(Dispatchers.IO) {
+                    (application as FitnessApplication).db.fitnessDao().insertCal(
+                        CalEntity(
+                            id = foodInfo.id,
+                            foodsEn = foodInfo.foodName,
+                            sugarsEn = foodInfo.sugars,
+                            carbsEn = foodInfo.carbs,
+                            caloriesEn = foodInfo.calories
+                        )
+                    )
+                }
+                intent.removeExtra("FOOD_ENTRY")
             }
 
             true

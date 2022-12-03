@@ -38,7 +38,7 @@ class SleepFrag : Fragment() {
                         Fitness(
                             entity.id,
                             entity.dayText,
-                            entity.hoursSlept,
+                            entity.hoursSlept
                         )
                     }.also { mappedList ->
                         Log.i("found", mappedList.size.toString())
