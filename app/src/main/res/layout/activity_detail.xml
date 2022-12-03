@@ -7,6 +7,122 @@
     tools:context=".DetailActivity"
     android:background="@drawable/s_night">
 
+    <EditText
+        android:id="@+id/eTCalory"
+        android:layout_width="198dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:hint="Enter Calory Amount Here."
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor='@color/white'
+        android:textColorHint='#9a9a9c'
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTCarb" />
+
+    <EditText
+        android:id="@+id/eTCarb"
+        android:layout_width="198dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:hint="Enter Carb Amount Here."
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor='@color/white'
+        android:textColorHint='#9a9a9c'
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTSugar" />
+
+    <EditText
+        android:id="@+id/eTSugar"
+        android:layout_width="198dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:hint="Enter Sugar Amount Here."
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor='@color/white'
+        android:textColorHint='#9a9a9c'
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTFoodName" />
+
+    <EditText
+        android:id="@+id/eTFoodName"
+        android:layout_width="198dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:ems="10"
+        android:hint="Enter Food Name Here."
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor='@color/white'
+        android:textColorHint='#9a9a9c'
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleepButton" />
+
+    <TextView
+        android:id="@+id/fNametv"
+        android:layout_width="112dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Food Name:"
+        android:textColor='@color/white'
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleepButton" />
+
+    <TextView
+        android:id="@+id/fSugartv"
+        android:layout_width="112dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Sugar Amount:"
+        android:textColor='@color/white'
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fNametv" />
+
+    <TextView
+        android:id="@+id/fCarbtv"
+        android:layout_width="112dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Carb Amount:"
+        android:textColor='@color/white'
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fSugartv" />
+
+    <TextView
+        android:id="@+id/fCaltv"
+        android:layout_width="112dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Calory Amount:"
+        android:textColor='@color/white'
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fCarbtv" />
+
     <Button
         android:id="@+id/sleepButton"
         android:layout_width="wrap_content"
@@ -16,6 +132,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTDay" />
+
+    <Button
+        android:id="@+id/foodButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Enter Meal Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTCalory" />
 
     <TextView
         android:id="@+id/sleptTV"
@@ -54,7 +180,7 @@
         android:hint="@string/enter_hours_slept_here"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textColorHint='#9a9a9c'
         android:textColor='@color/white'
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +198,7 @@
         android:minHeight="48dp"
         android:textColorHint='#9a9a9c'
         android:textColor='@color/white'
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eTHoursSlept" />
 

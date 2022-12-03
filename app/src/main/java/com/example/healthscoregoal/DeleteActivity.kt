@@ -11,23 +11,32 @@ import kotlinx.coroutines.launch
 class DeleteActivity : AppCompatActivity() {
     lateinit var dAB: Button
     lateinit var dSB: Button
+    lateinit var dFB: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delete)
 
         dSB = findViewById<Button>(R.id.delSleepButton)
         dAB = findViewById<Button>(R.id.delAllButton)
+        dFB = findViewById<Button>(R.id.delFoodButton)
 
 
-//       dSB.setOnClickListener{
-//           lifecycleScope.launch(Dispatchers.IO) {
-//               (application as FitnessApplication).db.fitnessDao().delete(fitness.toEntity())
-//           }
-//        }
-
+       dSB.setOnClickListener{
+           lifecycleScope.launch(Dispatchers.IO) {
+               (application as FitnessApplication).db.fitnessDao().deleteAll()
+           }
+        }
+        dFB.setOnClickListener{
+            lifecycleScope.launch(Dispatchers.IO) {
+                (application as FitnessApplication).db.fitnessDao().deleteAllCal()
+            }
+        }
         dAB.setOnClickListener{
             lifecycleScope.launch(Dispatchers.IO){
                 (application as FitnessApplication).db.fitnessDao().deleteAll()
+            }
+            lifecycleScope.launch(Dispatchers.IO){
+                (application as FitnessApplication).db.fitnessDao().deleteAllCal()
             }
         }
 

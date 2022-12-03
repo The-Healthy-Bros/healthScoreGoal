@@ -24,10 +24,10 @@
 
     <Button
         android:id="@+id/buttonDeleteSleep"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="475dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="😴 Delete All Sleep Data" />
+        android:text="Click here to Delete App Data" />
 
 </FrameLayout>
