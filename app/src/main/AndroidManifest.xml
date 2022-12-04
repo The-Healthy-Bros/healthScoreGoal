@@ -17,6 +17,12 @@
         android:theme="@style/Theme.HealthScoreGoal"
         tools:targetApi="31">
         <activity
+            android:name=".CalorieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarbActivity"
+            android:exported="false" />
+        <activity
             android:name=".SugarActivity"
             android:exported="false" />
         <activity

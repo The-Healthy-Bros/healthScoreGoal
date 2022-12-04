@@ -22,6 +22,8 @@ class FoodFrag : Fragment() {
     lateinit var fRV: RecyclerView
     lateinit var foodAdapter: FoodAdapter
     lateinit var sugarButton: Button
+    lateinit var carbButton: Button
+    lateinit var calButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,11 +33,21 @@ class FoodFrag : Fragment() {
         val layoutManager = LinearLayoutManager(view.context)
         fRV = view.findViewById(R.id.foodRV)
         sugarButton = view.findViewById(R.id.sugarButton)
+        carbButton = view.findViewById(R.id.carbButton)
+        calButton = view.findViewById(R.id.calorieButton)
         fRV.layoutManager = layoutManager
         foodAdapter = FoodAdapter(view.context, food)
         fRV.adapter = foodAdapter
         sugarButton.setOnClickListener{
             val intent = Intent(it.context, SugarActivity::class.java)
+            this.startActivity(intent)
+        }
+        carbButton.setOnClickListener{
+            val intent = Intent(it.context, CarbActivity::class.java)
+            this.startActivity(intent)
+        }
+        calButton.setOnClickListener{
+            val intent = Intent(it.context, CalorieActivity::class.java)
             this.startActivity(intent)
         }
         lifecycleScope.launch {

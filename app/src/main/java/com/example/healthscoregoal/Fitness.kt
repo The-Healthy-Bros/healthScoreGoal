@@ -54,6 +54,12 @@ data class Exercises(
         )
     }
 }
+@Keep
+@Serializable
+data class BaseResponse(
+    @SerialName("results")
+    val results: List<ApiTest>?
+)
 
 @Keep
 @Serializable
@@ -69,7 +75,7 @@ data class ApiTest(
 @Serializable
 data class nutrition(
     @SerialName("nutrients")
-    val nutrients: nutrients?
+    val nutrients: List<nutrients>?
 ) : java.io.Serializable
 @Keep
 @Serializable
@@ -79,5 +85,5 @@ data class nutrients(
     @SerialName("unit")
     val Unit: String?,
     @SerialName("amount")
-    val Amount: Int?
+    val Amount: Float?
 ) : java.io.Serializable
