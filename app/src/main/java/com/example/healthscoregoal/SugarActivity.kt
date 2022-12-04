@@ -40,10 +40,13 @@ class SugarActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["api-key"] = apiKey
+        params["minSugar"] = "1"
+        params["maxSugar"] = "50"
+        params["number"] = "10"
 
         // Using the client, perform the HTTP request
         client[
-                "https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&minSugar=1&maxSugar=50&number=10",
+                "https://api.spoonacular.com/recipes/complexSearch",
                 params,
                 object : JsonHttpResponseHandler()
                 {
@@ -64,7 +67,7 @@ class SugarActivity : AppCompatActivity() {
                         sRV.adapter = ApiFoodAdapter(models)
 
                         // Look for this in Logcat:
-                        Log.d("SugarFragment", "response successful")
+                        Log.d("SugarActivity", "response successful")
                     }
 
                     /*
@@ -79,7 +82,7 @@ class SugarActivity : AppCompatActivity() {
                     ) {
                         // If the error is not null, log it!
                         t?.message?.let {
-                            Log.e("SugarFragment", errorResponse)
+                            Log.e("SugarActivity", errorResponse)
                         }
                     }
                 }]
