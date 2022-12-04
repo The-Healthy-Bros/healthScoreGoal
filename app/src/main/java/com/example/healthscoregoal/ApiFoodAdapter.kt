@@ -30,7 +30,7 @@ class ApiFoodAdapter (private val apiLists: List<ApiTest>):
         val context = parent.context
         val inflater = LayoutInflater.from(context)
 
-        val wLView = inflater.inflate(R.layout.food_item, parent, false)
+        val wLView = inflater.inflate(R.layout.sugar_item, parent, false)
 
         return ViewHolder(wLView)
     }
@@ -39,9 +39,9 @@ class ApiFoodAdapter (private val apiLists: List<ApiTest>):
         val apiList = apiLists[position]
 
         holder.apiTitle.text = apiList.Title
-        holder.apiName.text = apiList.Nutrition?.nutrients?.Name
-        holder.apiAmount.text = apiList.Nutrition?.nutrients?.Amount.toString()
-        holder.apiUnit.text = apiList.Nutrition?.nutrients?.Unit
+        holder.apiName.text = apiList.Nutrition?.nutrients?.get(0)?.Name.toString()
+        holder.apiAmount.text = apiList.Nutrition?.nutrients?.get(0)?.Amount.toString()
+        holder.apiUnit.text = apiList.Nutrition?.nutrients?.get(0)?.Unit.toString()
 
         Glide.with(holder.itemView)
             .load(apiList.Image)

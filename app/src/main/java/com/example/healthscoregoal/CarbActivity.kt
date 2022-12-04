@@ -5,52 +5,47 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
-import org.json.JSONArray
-import org.json.JSONObject
 
-fun createJson1() = Json {
+fun createJson2() = Json {
     isLenient = true
     ignoreUnknownKeys = true
     useAlternativeNames = false
 }
 
 private const val apiKey = BuildConfig.apiKey
-private const val TAG = "SugarActivity/"
+private const val TAG = "CarbActivity/"
 
-class SugarActivity : AppCompatActivity() {
-    private val sugar = mutableListOf<ApiTest>()
-    lateinit var sRV: RecyclerView
+class CarbActivity : AppCompatActivity() {
+    private val carb = mutableListOf<ApiTest>()
+    lateinit var cRV: RecyclerView
     lateinit var apiFoodAdapter: ApiFoodAdapter
-    lateinit var fButton: Button
+    lateinit var cButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sugar)
+        setContentView(R.layout.activity_carb)
 
         val layoutManager = LinearLayoutManager(this)
-        fButton = findViewById(R.id.homeButton)
-        sRV = findViewById(R.id.sugarRV)
-        sRV.layoutManager = layoutManager
-        apiFoodAdapter = ApiFoodAdapter(sugar)
-        sRV.adapter = apiFoodAdapter
-        fButton.setOnClickListener{
+        cButton = findViewById(R.id.home2Button)
+        cRV = findViewById(R.id.carbRV)
+        cRV.layoutManager = layoutManager
+        apiFoodAdapter = ApiFoodAdapter(carb)
+        cRV.adapter = apiFoodAdapter
+        cButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             this.startActivity(intent)
         }
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minSugar"] = "1"
-        params["maxSugar"] = "50"
+        params["minCarbs"] = "1"
+        params["maxCarbs"] = "50"
         params["number"] = "10"
 
         // Using the client, perform the HTTP request
@@ -68,17 +63,17 @@ class SugarActivity : AppCompatActivity() {
                         headers: Headers,
                         json: JSON
                     ) {
-                        val parsedJson = createJson1().decodeFromString(
+                        val parsedJson = createJson2().decodeFromString(
                             BaseResponse.serializer(),
                             json.jsonObject.toString()
                         )
 
                         parsedJson.results?.let { list ->
-                            sRV.adapter = ApiFoodAdapter(list)
+                            cRV.adapter = ApiFoodAdapter(list)
                         }
 
                         // Look for this in Logcat:
-                        Log.d("SugarActivity", json.toString())
+                        Log.d("CarbActivity", json.toString())
                     }
 
                     /*
@@ -93,7 +88,7 @@ class SugarActivity : AppCompatActivity() {
                     ) {
                         // If the error is not null, log it!
                         t?.message?.let {
-                            Log.e("SugarActivity", errorResponse)
+                            Log.e("CarbActivity", errorResponse)
                         }
                     }
                 }]

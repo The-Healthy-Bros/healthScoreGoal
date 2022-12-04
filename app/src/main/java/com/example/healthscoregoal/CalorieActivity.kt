@@ -5,52 +5,45 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
-import org.json.JSONArray
-import org.json.JSONObject
 
-fun createJson1() = Json {
+fun createJson3() = Json {
     isLenient = true
     ignoreUnknownKeys = true
     useAlternativeNames = false
 }
 
 private const val apiKey = BuildConfig.apiKey
-private const val TAG = "SugarActivity/"
-
-class SugarActivity : AppCompatActivity() {
-    private val sugar = mutableListOf<ApiTest>()
-    lateinit var sRV: RecyclerView
+private const val TAG = "CalorieActivity/"
+class CalorieActivity : AppCompatActivity() {
+    private val cal = mutableListOf<ApiTest>()
+    lateinit var calRV: RecyclerView
     lateinit var apiFoodAdapter: ApiFoodAdapter
-    lateinit var fButton: Button
+    lateinit var calButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sugar)
-
+        setContentView(R.layout.activity_calorie)
         val layoutManager = LinearLayoutManager(this)
-        fButton = findViewById(R.id.homeButton)
-        sRV = findViewById(R.id.sugarRV)
-        sRV.layoutManager = layoutManager
-        apiFoodAdapter = ApiFoodAdapter(sugar)
-        sRV.adapter = apiFoodAdapter
-        fButton.setOnClickListener{
+        calButton = findViewById(R.id.home3Button)
+        calRV = findViewById(R.id.calorieRV)
+        calRV.layoutManager = layoutManager
+        apiFoodAdapter = ApiFoodAdapter(cal)
+        calRV.adapter = apiFoodAdapter
+        calButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             this.startActivity(intent)
         }
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minSugar"] = "1"
-        params["maxSugar"] = "50"
+        params["minCalories"] = "1"
+        params["maxCalories"] = "200"
         params["number"] = "10"
 
         // Using the client, perform the HTTP request
@@ -68,17 +61,17 @@ class SugarActivity : AppCompatActivity() {
                         headers: Headers,
                         json: JSON
                     ) {
-                        val parsedJson = createJson1().decodeFromString(
+                        val parsedJson = createJson3().decodeFromString(
                             BaseResponse.serializer(),
                             json.jsonObject.toString()
                         )
 
                         parsedJson.results?.let { list ->
-                            sRV.adapter = ApiFoodAdapter(list)
+                            calRV.adapter = ApiFoodAdapter(list)
                         }
 
                         // Look for this in Logcat:
-                        Log.d("SugarActivity", json.toString())
+                        Log.d("CalorieActivity", json.toString())
                     }
 
                     /*
@@ -93,7 +86,7 @@ class SugarActivity : AppCompatActivity() {
                     ) {
                         // If the error is not null, log it!
                         t?.message?.let {
-                            Log.e("SugarActivity", errorResponse)
+                            Log.e("CalorieActivity", errorResponse)
                         }
                     }
                 }]
