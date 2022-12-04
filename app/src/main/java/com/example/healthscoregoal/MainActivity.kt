@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         // Linking the bottom navigation view
         bottomNavView = findViewById(R.id.bottom_navigation)
 
-        //newB = findViewById<Button>(R.id.fitButton2)
+        jB = findViewById<Button>(R.id.fitButton)
         //delB = findViewById<Button>(R.id.delButton)
 
         // Handle Navigation Selection
@@ -87,10 +87,10 @@ class MainActivity : AppCompatActivity() {
         bottomNavView.selectedItemId = R.id.main_menu
 
 
-//        jB.setOnClickListener {
-//            val intent = Intent (this, DetailActivity::class.java)
-//            this.startActivity(intent)
-//        }
+        jB.setOnClickListener {
+            val intent = Intent (this, DetailActivity::class.java)
+            this.startActivity(intent)
+        }
 //        delB.setOnClickListener {
 //            val intent = Intent (this, DeleteActivity::class.java)
 //            this.startActivity(intent)
