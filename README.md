@@ -46,7 +46,7 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 - [x] Sleep Tracker
 - [x] Delete Sleep data (all and specifics)
 - [ ] User Page Overview
-- [ ] All data delete
+- [x] All data delete
 
 **Stretch Features**
 - [ ] Weekly Activity & Exercise Details
