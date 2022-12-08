@@ -7,37 +7,50 @@
     tools:context=".MainFrag"
     android:background="#a0fab9">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/welcomeBackTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="Welcome Back, Traveller!"
+            android:textColor="@color/black"
+            android:textColorLink="@color/design_default_color_primary_variant"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/welcomeBackTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome Back, Traveller!"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textColorLink="@color/design_default_color_primary_variant"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="275dp"
-        android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/dailyTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:text="An apple a day, keeps the doctor away!"
+            android:textColor="@color/purple_500"
+            android:textSize="17sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userImage" />
 
-    <TextView
-        android:id="@+id/dailyTip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="An apple a day, keeps the doctor away!"
-        android:textStyle="italic"
-        android:textColor="@color/purple_500"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="315dp"
-        android:textSize="17sp"/>
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="149dp"
+            android:layout_height="242dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/bellsmile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeBackTxt" />
 
-    <ImageView
-        android:id="@+id/userImage"
-        android:layout_width="149dp"
-        android:layout_height="242dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/bellsmile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

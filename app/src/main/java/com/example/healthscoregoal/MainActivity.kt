@@ -82,6 +82,23 @@ class MainActivity : AppCompatActivity() {
                 intent.removeExtra("FOOD_ENTRY")
             }
 
+            val exInfo = intent.getSerializableExtra("EXERCISE_ENTRY") as Exercises?
+            if(exInfo != null) {
+                Log.d(TAG, "got extra")
+                lifecycleScope.launch(Dispatchers.IO) {
+                    (application as FitnessApplication).db.fitnessDao().insertEX(
+                        ExerciseEntity(
+                            id = exInfo.id,
+                            exDayEn = exInfo.exDay,
+                            exNameEn = exInfo.exName,
+                            exTimeEn = exInfo.exTime,
+                            burntCalEn = exInfo.burntCals
+                        )
+                    )
+                }
+                intent.removeExtra("EXERCISE_ENTRY")
+            }
+
             true
         }
         bottomNavView.selectedItemId = R.id.main_menu
