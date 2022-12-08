@@ -18,4 +18,7 @@
     <string name="add_new_fitness_data">Add New Fitness Data</string>
     <string name="delete_data"><![CDATA[Delete Data -->]]></string>
     <string name="add_new_journal_data" />
+    <string name="add_sleep_info"><![CDATA[<Add sleep info>]]></string>
+    <string name="add_meal_info"><![CDATA[<Add Meal Info>]]></string>
+    <string name="add_exercise_info"><![CDATA[<Add Exercise Info>]]></string>
 </resources>

@@ -27,7 +27,9 @@ data class CalEntity(
 @Entity(tableName = "exercise_table")
 data class ExerciseEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "burntCals") val burntCalEn: Int?,
-    @ColumnInfo(name = "exercise") val exerciseEn: String?,
-    @ColumnInfo(name = "time") val timeEn: Double?
+    @ColumnInfo(name = "exercise day") val exDayEn: String?,
+    @ColumnInfo(name = "exercise name") val exNameEn: String?,
+    @ColumnInfo(name = "exercise length") val exTimeEn: String?,
+@ColumnInfo(name = "burntCals") val burntCalEn: Int?
+
 )

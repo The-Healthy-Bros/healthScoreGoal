@@ -40,17 +40,19 @@ data class Foods(
 
 data class Exercises(
     val id: Long,
-    val burntCals: Int?,
-    val exercise: String?,
-    val timeSpent: Double?
+    val exDay: String?,
+    val exName: String?,
+    val exTime: String?,
+    val burntCals: Int?
 ): java.io.Serializable {
 
     fun toEntity(): ExerciseEntity{
         return ExerciseEntity(
             id = this.id,
+            exDayEn = this.exDay,
+            exNameEn = this.exName,
+            exTimeEn = this.exTime,
             burntCalEn = this.burntCals,
-            exerciseEn = this.exercise,
-            timeEn = this.timeSpent
         )
     }
 }

@@ -39,7 +39,7 @@ interface FitnessDAO {
     fun getAllExercise(): Flow<List<ExerciseEntity>>
 
     @Insert
-    fun insert(exercise: ExerciseEntity)
+    fun insertEX(exercise: ExerciseEntity)
 
     @Delete
     fun deleteExercise(exercise: ExerciseEntity)

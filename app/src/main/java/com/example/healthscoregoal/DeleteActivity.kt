@@ -12,6 +12,7 @@ class DeleteActivity : AppCompatActivity() {
     lateinit var dAB: Button
     lateinit var dSB: Button
     lateinit var dFB: Button
+    lateinit var eFB:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delete)
@@ -19,6 +20,7 @@ class DeleteActivity : AppCompatActivity() {
         dSB = findViewById<Button>(R.id.delSleepButton)
         dAB = findViewById<Button>(R.id.delAllButton)
         dFB = findViewById<Button>(R.id.delFoodButton)
+        eFB = findViewById(R.id.delExerciseButton)
 
 
        dSB.setOnClickListener{
@@ -31,12 +33,21 @@ class DeleteActivity : AppCompatActivity() {
                 (application as FitnessApplication).db.fitnessDao().deleteAllCal()
             }
         }
+        eFB.setOnClickListener{
+            lifecycleScope.launch(Dispatchers.IO) {
+                (application as FitnessApplication).db.fitnessDao().deleteAllExercise()
+            }
+        }
+
         dAB.setOnClickListener{
             lifecycleScope.launch(Dispatchers.IO){
                 (application as FitnessApplication).db.fitnessDao().deleteAll()
             }
             lifecycleScope.launch(Dispatchers.IO){
                 (application as FitnessApplication).db.fitnessDao().deleteAllCal()
+            }
+            lifecycleScope.launch(Dispatchers.IO) {
+                (application as FitnessApplication).db.fitnessDao().deleteAllExercise()
             }
         }
 
