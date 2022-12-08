@@ -7,53 +7,77 @@
     tools:context=".FoodFrag"
     android:background="#a0c7fa">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/foodRV"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="399dp"
-        android:layout_marginTop="40dp"
-        tools:listitem="@layout/food_item" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/foodJTV"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Food Journal:" />
+        <Button
+            android:id="@+id/carbButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="16dp"
+            android:text="By Carbs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeTV" />
 
-    <TextView
-        android:id="@+id/recipeTV"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:layout_marginTop="475dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search For Recipes By Ingredients:" />
+        <Button
+            android:id="@+id/sugarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:text="By Sugar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipeTV" />
 
-    <Button
-        android:id="@+id/sugarButton"
-        android:layout_marginTop="515dp"
-        android:layout_marginStart="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="By Sugar" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/foodRV"
+            android:layout_width="match_parent"
+            android:layout_height="399dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodJTV"
+            tools:listitem="@layout/food_item" />
 
-    <Button
-        android:id="@+id/calorieButton"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="515dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="By Calories" />
+        <TextView
+            android:id="@+id/foodJTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Food Journal:"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/carbButton"
-        android:layout_marginTop="515dp"
-        android:layout_marginStart="275dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="By Carbs" />
+        <TextView
+            android:id="@+id/recipeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Search For Recipes By Ingredients:"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodRV" />
+
+        <Button
+            android:id="@+id/calorieButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="25dp"
+            android:text="By Calories"
+            app:layout_constraintEnd_toStartOf="@+id/carbButton"
+            app:layout_constraintHorizontal_bias="0.292"
+            app:layout_constraintStart_toEndOf="@+id/sugarButton"
+            app:layout_constraintTop_toBottomOf="@+id/recipeTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

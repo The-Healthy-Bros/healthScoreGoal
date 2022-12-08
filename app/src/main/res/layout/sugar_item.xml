@@ -9,19 +9,19 @@
         android:id="@+id/line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="---------------------------------------------------------------"
         android:textColor='@color/black'
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apiUnitTV" />
 
     <ImageView
         android:id="@+id/imageIV"
-        android:layout_width="157dp"
-        android:layout_height="154dp"
+        android:layout_width="211dp"
+        android:layout_height="163dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTV"
@@ -41,12 +41,12 @@
     <TextView
         android:id="@+id/apiNameTV"
         android:layout_width="wrap_content"
-        android:layout_height="27dp"
+        android:layout_height="30dp"
         android:layout_marginTop="8dp"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageIV" />
 
@@ -54,7 +54,8 @@
         android:id="@+id/apiAmountTV"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/semiColonTV"
@@ -64,7 +65,8 @@
         android:id="@+id/apiUnitTV"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/apiAmountTV"
@@ -74,9 +76,10 @@
         android:id="@+id/semiColonTV"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:text=":"
         android:textSize="14sp"
         android:textStyle="bold"
-        android:text=":"
         app:layout_constraintStart_toEndOf="@+id/apiNameTV"
         app:layout_constraintTop_toBottomOf="@+id/imageIV" />
 </androidx.constraintlayout.widget.ConstraintLayout>
