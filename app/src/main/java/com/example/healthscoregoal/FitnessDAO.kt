@@ -46,4 +46,5 @@ interface FitnessDAO {
 
     @Query("DELETE FROM exercise_table")
     fun deleteAllExercise()
+
 }

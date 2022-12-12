@@ -122,4 +122,13 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.all_frame_layout, fragment)
         fragmentTransaction.commit()
     }
+
+    companion object {
+        var minS = 0
+        var maxS = 0
+        var minCarb = 0
+        var maxCarb = 0
+        var minCal = 0
+        var maxCal = 0
+    }
 }

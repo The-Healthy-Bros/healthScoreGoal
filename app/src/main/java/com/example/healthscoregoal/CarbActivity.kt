@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
+import com.example.healthscoregoal.MainActivity.Companion.minCarb
+import com.example.healthscoregoal.MainActivity.Companion.maxCarb
 
 fun createJson2() = Json {
     isLenient = true
@@ -44,9 +49,12 @@ class CarbActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minCarbs"] = "1"
-        params["maxCarbs"] = "50"
+        params["minCarbs"] = minCarb.toString()
+        params["maxCarbs"] = maxCarb.toString()
         params["number"] = "10"
+
+
+
 
         // Using the client, perform the HTTP request
         client[

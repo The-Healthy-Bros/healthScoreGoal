@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,10 +14,15 @@ import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
 import org.json.JSONArray
 import org.json.JSONObject
+import com.example.healthscoregoal.MainActivity.Companion.minS
+import com.example.healthscoregoal.MainActivity.Companion.maxS
+import kotlin.math.max
 
 fun createJson1() = Json {
     isLenient = true
@@ -49,9 +55,12 @@ class SugarActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minSugar"] = "1"
-        params["maxSugar"] = "50"
+        params["minSugar"] = minS.toString()
+        params["maxSugar"] = maxS.toString()
         params["number"] = "10"
+
+
+
 
         // Using the client, perform the HTTP request
         client[

@@ -30,6 +30,6 @@ data class ExerciseEntity(
     @ColumnInfo(name = "exercise day") val exDayEn: String?,
     @ColumnInfo(name = "exercise name") val exNameEn: String?,
     @ColumnInfo(name = "exercise length") val exTimeEn: String?,
-@ColumnInfo(name = "burntCals") val burntCalEn: Int?
-
+    @ColumnInfo(name = "burntCals") val burntCalEn: Int?
 )
+

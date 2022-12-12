@@ -56,6 +56,7 @@ data class Exercises(
         )
     }
 }
+
 @Keep
 @Serializable
 data class BaseResponse(
