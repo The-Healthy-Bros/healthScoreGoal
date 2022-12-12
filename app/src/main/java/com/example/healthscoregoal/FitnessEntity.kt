@@ -32,22 +32,4 @@ data class ExerciseEntity(
     @ColumnInfo(name = "exercise length") val exTimeEn: String?,
     @ColumnInfo(name = "burntCals") val burntCalEn: Int?
 )
-// Exercise table
-@Entity(tableName = "api_sugar")
-data class APISUgar(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "min sugar") val exMinS: String?,
-    @ColumnInfo(name = "max sugar") val exMaxS: String?
-)
-@Entity(tableName = "api_carbs")
-data class APICarbs(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "min carb") val exMinCarb: String?,
-    @ColumnInfo(name = "max carb") val exMaxCarb: String?
-)
-@Entity(tableName = "api_cals")
-data class APICals(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "min cals") val exMinCals: String?,
-    @ColumnInfo(name = "max cals") val exMaxCals: String?
-)
+

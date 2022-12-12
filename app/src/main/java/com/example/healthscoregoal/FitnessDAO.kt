@@ -47,42 +47,4 @@ interface FitnessDAO {
     @Query("DELETE FROM exercise_table")
     fun deleteAllExercise()
 
-    // sugar api table
-    @Query("SELECT * FROM api_sugar")
-    fun getAllminmaxS(): Flow<List<APISUgar>>
-
-    @Insert
-    fun insertS(fitness: APISUgar)
-
-    @Delete
-    fun deleteSugar(fitness: APISUgar)
-
-    @Query("DELETE FROM api_sugar")
-    fun deleteAllS()
-
-    // carb api table
-    @Query("SELECT * FROM api_carbs")
-    fun getAllminmaxCarbs(): Flow<List<APICarbs>>
-
-    @Insert
-    fun insertCarbs(fitness: APICarbs)
-
-    @Delete
-    fun deleteCarbs(fitness: APICarbs)
-
-    @Query("DELETE FROM api_carbs")
-    fun deleteAllCarbs()
-
-    // cals api table
-    @Query("SELECT * FROM api_cals")
-    fun getAllminmaxCals(): Flow<List<APICals>>
-
-    @Insert
-    fun insertCals(fitness: APICals)
-
-    @Delete
-    fun deleteCals(fitness: APICals)
-
-    @Query("DELETE FROM api_cals")
-    fun deleteAllCals()
 }

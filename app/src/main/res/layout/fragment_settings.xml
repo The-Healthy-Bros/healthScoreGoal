@@ -29,10 +29,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="4dp"
             android:text="Click here to Delete App Data"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/updateApiButton" />
 
@@ -51,9 +51,9 @@
 
         <EditText
             android:id="@+id/etMinSugar"
-            android:layout_width="200dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:ems="10"
             android:hint="Enter Min Sugar Here"
             android:inputType="textPersonName"
@@ -62,9 +62,9 @@
 
         <EditText
             android:id="@+id/etMaxSugar"
-            android:layout_width="200dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:ems="10"
             android:hint="Enter Max Sugar Here"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Click here to update api search params"
+            android:text="Click here to update recipe search params"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,9 +85,9 @@
 
         <EditText
             android:id="@+id/etMinCarbs"
-            android:layout_width="200dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Enter Min Carbs Here"
             android:inputType="textPersonName"
@@ -96,20 +96,20 @@
 
         <EditText
             android:id="@+id/etminCals"
-            android:layout_width="200dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
-            android:hint="Enter Min Calories Here"
+            android:hint="Enter Min Cals Here"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etMinCarbs" />
 
         <EditText
             android:id="@+id/etMaxCarbs"
-            android:layout_width="200dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Enter Max Carbs Here"
             android:inputType="textPersonName"
@@ -120,11 +120,11 @@
 
         <EditText
             android:id="@+id/etMaxCals"
-            android:layout_width="200dp"
+            android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             android:ems="10"
-            android:hint="Enter Max Calories Here"
+            android:hint="Enter Max Cals Here"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

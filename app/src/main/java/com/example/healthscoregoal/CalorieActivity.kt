@@ -15,6 +15,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
+import com.example.healthscoregoal.MainActivity.Companion.minCal
+import com.example.healthscoregoal.MainActivity.Companion.maxCal
 
 fun createJson3() = Json {
     isLenient = true
@@ -45,25 +47,12 @@ class CalorieActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minCalories"] = "1"
-        params["maxCalories"] = "200"
+        params["minCalories"] = minCal.toString()
+        params["maxCalories"] = maxCal.toString()
         params["number"] = "10"
 
-        val calInfo = intent.getSerializableExtra("CAL_ENTRY") as APICal?
-        if(calInfo != null) {
-            Log.d(TAG, "got extra")
-            lifecycleScope.launch(Dispatchers.IO) {
-                (application as FitnessApplication).db.fitnessDao().insertCals(
-                    APICals(
-                        id = calInfo.id,
-                        exMinCals = calInfo.minCal,
-                        exMaxCals = calInfo.maxCal
-                    )
-                )
-            }
-        }
-        params["minCalories"] = calInfo?.minCal
-        params["maxCalories"] = calInfo?.maxCal
+        Log.d("cal debub",maxCal.toString())
+
 
         // Using the client, perform the HTTP request
         client[

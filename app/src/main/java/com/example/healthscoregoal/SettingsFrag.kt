@@ -9,6 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import com.example.healthscoregoal.MainActivity.Companion.minS
+import com.example.healthscoregoal.MainActivity.Companion.maxS
+import com.example.healthscoregoal.MainActivity.Companion.minCarb
+import com.example.healthscoregoal.MainActivity.Companion.maxCarb
+import com.example.healthscoregoal.MainActivity.Companion.minCal
+import com.example.healthscoregoal.MainActivity.Companion.maxCal
+
+
 const val CARB_ENTRY = "CARB_ENTRY"
 const val SUGAR_ENTRY = "SUGAR_ENTRY"
 const val CAL_ENTRY = "CAL_ENTRY"
@@ -43,25 +51,19 @@ class SettingsFrag : Fragment() {
 
         apiUButton.setOnClickListener {
             if(minSugar.text.isNotEmpty() && maxSugar.text.isNotEmpty()){
-                val intent = Intent(activity, SugarActivity::class.java)
-                val sug = APISug(0,minSugar.text.toString(), maxSugar.text.toString())
-                intent.putExtra(SUGAR_ENTRY, sug)
+                minS = minSugar.text.toString().toInt()
+                maxS = maxSugar.text.toString().toInt()
             }
-        }
-        apiUButton.setOnClickListener {
-            if (minCarbs.text.isNotEmpty() && maxCarbs.text.isNotEmpty()){
-                val intent =Intent(activity, CarbActivity::class.java)
-                val carb = APICarb(0,minCarbs.text.toString(), maxCarbs.text.toString())
-                intent.putExtra(CARB_ENTRY, carb)
+            if (minCarbs.text.isNotEmpty() && maxCarbs.text.isNotEmpty()) {
+                minCarb = minCarbs.text.toString().toInt()
+                maxCarb = maxCarbs.text.toString().toInt()
             }
-        }
-        apiUButton.setOnClickListener {
             if(minCals.text.isNotEmpty() && maxCals.text.isNotEmpty()){
-                val intent = Intent(activity, CalorieActivity::class.java)
-                val cals = APICal(0,minCals.text.toString(), maxCals.text.toString())
-                intent.putExtra(CAL_ENTRY, cals)
+                minCal = minCals.text.toString().toInt()
+                maxCal = maxCals.text.toString().toInt()
             }
         }
+
         delButton.setOnClickListener {
             val intent = Intent(it.context, DeleteActivity::class.java)
             this.startActivity(intent)

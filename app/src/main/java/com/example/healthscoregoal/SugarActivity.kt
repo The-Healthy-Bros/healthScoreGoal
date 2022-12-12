@@ -20,6 +20,9 @@ import kotlinx.serialization.json.Json
 import okhttp3.Headers
 import org.json.JSONArray
 import org.json.JSONObject
+import com.example.healthscoregoal.MainActivity.Companion.minS
+import com.example.healthscoregoal.MainActivity.Companion.maxS
+import kotlin.math.max
 
 fun createJson1() = Json {
     isLenient = true
@@ -52,25 +55,12 @@ class SugarActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minSugar"] = "1"
-        params["maxSugar"] = "50"
+        params["minSugar"] = minS.toString()
+        params["maxSugar"] = maxS.toString()
         params["number"] = "10"
 
-        val sugInfo = intent.getSerializableExtra("SUGAR_ENTRY") as APISug?
-        if(sugInfo != null) {
-            Log.d(TAG, "got extra")
-            lifecycleScope.launch(Dispatchers.IO) {
-                (application as FitnessApplication).db.fitnessDao().insertS(
-                    APISUgar(
-                        id = sugInfo.id,
-                        exMinS = sugInfo.minSug,
-                        exMaxS = sugInfo.maxSug
-                    )
-                )
-            }
-        }
-        params["minSugar"] = sugInfo?.minSug
-        params["maxSugar"] = sugInfo?.maxSug
+
+
 
         // Using the client, perform the HTTP request
         client[

@@ -15,6 +15,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
+import com.example.healthscoregoal.MainActivity.Companion.minCarb
+import com.example.healthscoregoal.MainActivity.Companion.maxCarb
 
 fun createJson2() = Json {
     isLenient = true
@@ -47,25 +49,12 @@ class CarbActivity : AppCompatActivity() {
         val client = AsyncHttpClient()
         val params = RequestParams()
         params["apiKey"] = apiKey
-        params["minCarbs"] = "1"
-        params["maxCarbs"] = "50"
+        params["minCarbs"] = minCarb.toString()
+        params["maxCarbs"] = maxCarb.toString()
         params["number"] = "10"
 
-        val carbInfo = intent.getSerializableExtra("CARB_ENTRY") as APICarb?
-        if(carbInfo != null) {
-            Log.d(TAG, "got extra")
-            lifecycleScope.launch(Dispatchers.IO) {
-                (application as FitnessApplication).db.fitnessDao().insertCarbs(
-                    APICarbs(
-                        id = carbInfo.id,
-                        exMinCarb = carbInfo.minCarb,
-                        exMaxCarb = carbInfo.maxCarb
-                    )
-                )
-            }
-        }
-        params["minCarbs"] = carbInfo?.minCarb
-        params["maxCarbs"] = carbInfo?.maxCarb
+
+
 
         // Using the client, perform the HTTP request
         client[
