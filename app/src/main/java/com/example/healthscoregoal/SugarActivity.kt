@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,8 @@ import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
 import org.json.JSONArray
@@ -52,6 +55,22 @@ class SugarActivity : AppCompatActivity() {
         params["minSugar"] = "1"
         params["maxSugar"] = "50"
         params["number"] = "10"
+
+        val sugInfo = intent.getSerializableExtra("SUGAR_ENTRY") as APISug?
+        if(sugInfo != null) {
+            Log.d(TAG, "got extra")
+            lifecycleScope.launch(Dispatchers.IO) {
+                (application as FitnessApplication).db.fitnessDao().insertS(
+                    APISUgar(
+                        id = sugInfo.id,
+                        exMinS = sugInfo.minSug,
+                        exMaxS = sugInfo.maxSug
+                    )
+                )
+            }
+        }
+        params["minSugar"] = sugInfo?.minSug
+        params["maxSugar"] = sugInfo?.maxSug
 
         // Using the client, perform the HTTP request
         client[

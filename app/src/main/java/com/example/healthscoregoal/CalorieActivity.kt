@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
 
@@ -45,6 +48,22 @@ class CalorieActivity : AppCompatActivity() {
         params["minCalories"] = "1"
         params["maxCalories"] = "200"
         params["number"] = "10"
+
+        val calInfo = intent.getSerializableExtra("CAL_ENTRY") as APICal?
+        if(calInfo != null) {
+            Log.d(TAG, "got extra")
+            lifecycleScope.launch(Dispatchers.IO) {
+                (application as FitnessApplication).db.fitnessDao().insertCals(
+                    APICals(
+                        id = calInfo.id,
+                        exMinCals = calInfo.minCal,
+                        exMaxCals = calInfo.maxCal
+                    )
+                )
+            }
+        }
+        params["minCalories"] = calInfo?.minCal
+        params["maxCalories"] = calInfo?.maxCal
 
         // Using the client, perform the HTTP request
         client[

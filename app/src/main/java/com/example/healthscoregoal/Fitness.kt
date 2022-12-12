@@ -56,6 +56,48 @@ data class Exercises(
         )
     }
 }
+data class APISug(
+    val id: Long,
+    val minSug: String?,
+    val maxSug: String?,
+): java.io.Serializable {
+
+    fun toEntity(): APISUgar{
+        return APISUgar(
+            id = this.id,
+            exMinS = this.minSug,
+            exMaxS = this.maxSug
+        )
+    }
+}
+data class APICarb(
+    val id: Long,
+    val minCarb: String?,
+    val maxCarb: String?,
+): java.io.Serializable {
+
+    fun toEntity(): APICarbs{
+        return APICarbs(
+            id = this.id,
+            exMinCarb = this.minCarb,
+            exMaxCarb = this.maxCarb
+        )
+    }
+}
+data class APICal(
+    val id: Long,
+    val minCal: String?,
+    val maxCal: String?,
+): java.io.Serializable {
+
+    fun toEntity(): APICals{
+        return APICals(
+            id = this.id,
+            exMinCals = this.minCal,
+            exMaxCals = this.maxCal
+        )
+    }
+}
 @Keep
 @Serializable
 data class BaseResponse(

@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import okhttp3.Headers
 
@@ -47,6 +50,22 @@ class CarbActivity : AppCompatActivity() {
         params["minCarbs"] = "1"
         params["maxCarbs"] = "50"
         params["number"] = "10"
+
+        val carbInfo = intent.getSerializableExtra("CARB_ENTRY") as APICarb?
+        if(carbInfo != null) {
+            Log.d(TAG, "got extra")
+            lifecycleScope.launch(Dispatchers.IO) {
+                (application as FitnessApplication).db.fitnessDao().insertCarbs(
+                    APICarbs(
+                        id = carbInfo.id,
+                        exMinCarb = carbInfo.minCarb,
+                        exMaxCarb = carbInfo.maxCarb
+                    )
+                )
+            }
+        }
+        params["minCarbs"] = carbInfo?.minCarb
+        params["maxCarbs"] = carbInfo?.maxCarb
 
         // Using the client, perform the HTTP request
         client[
