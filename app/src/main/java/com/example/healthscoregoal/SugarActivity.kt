@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.view.isEmpty
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,9 +43,15 @@ class SugarActivity : AppCompatActivity() {
     lateinit var sRV: RecyclerView
     lateinit var apiFoodAdapter: ApiFoodAdapter
     lateinit var fButton: Button
+    lateinit var noneFound: ImageView
+    lateinit var notTV: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sugar)
+
+        noneFound = findViewById(R.id.no_sugar)
+        notTV = findViewById(R.id.message_sugar)
 
         val layoutManager = LinearLayoutManager(this)
         fButton = findViewById(R.id.homeButton)
@@ -48,6 +59,7 @@ class SugarActivity : AppCompatActivity() {
         sRV.layoutManager = layoutManager
         apiFoodAdapter = ApiFoodAdapter(sugar)
         sRV.adapter = apiFoodAdapter
+
         fButton.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             this.startActivity(intent)
@@ -58,8 +70,6 @@ class SugarActivity : AppCompatActivity() {
         params["minSugar"] = minS.toString()
         params["maxSugar"] = maxS.toString()
         params["number"] = "10"
-
-
 
 
         // Using the client, perform the HTTP request
@@ -83,7 +93,12 @@ class SugarActivity : AppCompatActivity() {
                         )
 
                         parsedJson.results?.let { list ->
+                            if(list.isEmpty()) {
+                                noneFound.isVisible = true
+                                notTV.isVisible = true
+                            }
                             sRV.adapter = ApiFoodAdapter(list)
+
                         }
 
                         // Look for this in Logcat:

@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,11 +35,18 @@ class CarbActivity : AppCompatActivity() {
     lateinit var cRV: RecyclerView
     lateinit var apiFoodAdapter: ApiFoodAdapter
     lateinit var cButton: Button
+    lateinit var noneFound: ImageView
+    lateinit var notTV: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carb)
 
         val layoutManager = LinearLayoutManager(this)
+
+        noneFound = findViewById(R.id.no_sugar3)
+        notTV = findViewById(R.id.message_sugar3)
+
         cButton = findViewById(R.id.home2Button)
         cRV = findViewById(R.id.carbRV)
         cRV.layoutManager = layoutManager
@@ -77,6 +87,10 @@ class CarbActivity : AppCompatActivity() {
                         )
 
                         parsedJson.results?.let { list ->
+                            if(list.isEmpty()) {
+                                noneFound.isVisible = true
+                                notTV.isVisible = true
+                            }
                             cRV.adapter = ApiFoodAdapter(list)
                         }
 

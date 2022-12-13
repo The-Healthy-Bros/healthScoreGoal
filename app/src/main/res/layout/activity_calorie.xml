@@ -8,11 +8,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calorieRV"
-        android:layout_width="match_parent"
-        android:layout_height="523dp"
+        android:layout_width="407dp"
+        android:layout_height="555dp"
         android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sugarTV"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/sugar_item" />
 
     <TextView
@@ -20,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
         android:text="Calorie Sorted Recipes:"
         android:textColor="@color/black"
         android:textSize="22sp"
@@ -34,8 +39,39 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:text="Click here to go back."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935" />
+
+    <ImageView
+        android:id="@+id/no_sugar2"
+        android:layout_width="218dp"
+        android:layout_height="258dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41"
+        app:srcCompat="@drawable/proxy_image"
+        android:contentDescription="Image to show no food found."
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/message_sugar2"
+        android:layout_width="340dp"
+        android:layout_height="39dp"
+        android:text="No meal found with your parameters"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/home3Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calorieRV" />
+        app:layout_constraintTop_toBottomOf="@+id/no_sugar2"
+        app:layout_constraintVertical_bias="0.169" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
