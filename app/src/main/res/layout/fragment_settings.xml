@@ -19,10 +19,12 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:src="@drawable/ic_baseline_settings_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settingsTV" />
+            app:layout_constraintTop_toBottomOf="@+id/settingsTV"
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/buttonDeleteSleep"
@@ -31,10 +33,12 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="4dp"
             android:text="Click here to Delete App Data"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintHorizontal_bias="0.595"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/updateApiButton" />
+            app:layout_constraintTop_toBottomOf="@+id/updateApiButton"
+            app:layout_constraintVertical_bias="0.075" />
 
         <TextView
             android:id="@+id/settingsTV"
@@ -45,20 +49,26 @@
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/etMinSugar"
             android:layout_width="190dp"
             android:layout_height="48dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Enter Min Sugar Here"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cog1Setting" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.351" />
 
         <EditText
             android:id="@+id/etMaxSugar"
@@ -67,21 +77,24 @@
             android:layout_marginTop="12dp"
             android:ems="10"
             android:hint="Enter Max Sugar Here"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.708"
             app:layout_constraintStart_toEndOf="@+id/etMinSugar"
-            app:layout_constraintTop_toBottomOf="@+id/cog1Setting" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.359" />
 
         <Button
             android:id="@+id/updateApiButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="Click here to update recipe search params"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.604"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etminCals" />
+            app:layout_constraintTop_toTopOf="@+id/settingsTV"
+            app:layout_constraintVertical_bias="0.699" />
 
         <EditText
             android:id="@+id/etMinCarbs"
@@ -91,8 +104,12 @@
             android:ems="10"
             android:hint="Enter Min Carbs Here"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etMinSugar" />
+            app:layout_constraintTop_toBottomOf="@+id/etMinSugar"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/etminCals"
@@ -102,8 +119,12 @@
             android:ems="10"
             android:hint="Enter Min Cals Here"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.072"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etMinCarbs" />
+            app:layout_constraintTop_toBottomOf="@+id/etMinCarbs"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/etMaxCarbs"
@@ -113,10 +134,12 @@
             android:ems="10"
             android:hint="Enter Max Carbs Here"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.708"
             app:layout_constraintStart_toEndOf="@+id/etMinCarbs"
-            app:layout_constraintTop_toBottomOf="@+id/etMaxSugar" />
+            app:layout_constraintTop_toBottomOf="@+id/etMaxSugar"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/etMaxCals"
@@ -126,9 +149,11 @@
             android:ems="10"
             android:hint="Enter Max Cals Here"
             android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.708"
             app:layout_constraintStart_toEndOf="@+id/etminCals"
-            app:layout_constraintTop_toBottomOf="@+id/etMaxCarbs" />
+            app:layout_constraintTop_toBottomOf="@+id/etMaxCarbs"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

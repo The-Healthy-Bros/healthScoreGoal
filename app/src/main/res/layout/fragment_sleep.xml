@@ -14,16 +14,14 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sleepRV"
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
+            android:layout_width="405dp"
+            android:layout_height="527dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sleepTV"
             app:layout_constraintVertical_bias="0.0"
-            tools:listitem="@layout/sleep_item">
-        </androidx.recyclerview.widget.RecyclerView>
+            tools:listitem="@layout/sleep_item"></androidx.recyclerview.widget.RecyclerView>
 
         <TextView
             android:id="@+id/sleepTV"
