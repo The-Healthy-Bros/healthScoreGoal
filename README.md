@@ -98,8 +98,6 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 - Settings
     - Where users can configure their app
     
-[![Watch the video](https://img.youtube.com/vi/XNYhip-_dSM/default.jpg)]([https://youtu.be/nTQUwghvy5Q](https://www.youtube.com/embed/XNYhip-_dSM))
-
 ## Wireframes
 
 <img src="WireFrame.jpg" width=600>
@@ -127,4 +125,9 @@ Fifth week update gif:
 Final week update gif:
 
 <img src="finalWeekGif.gif" title='Final update' width='' alt='Final gif update'>
+
+Embed:
+[![Watch the video](https://img.youtube.com/vi/XNYhip-_dSM/default.jpg)](https://www.youtube.com/watch?v=XNYhip-_dSM)
+
+Youtube Link: https://www.youtube.com/watch?v=XNYhip-_dSM
 
