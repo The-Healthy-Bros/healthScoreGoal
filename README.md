@@ -37,22 +37,24 @@ Sleep counter helps users keep track of their ZZZ's and assist them in getting t
 ### 1. User Features (Required and Optional)
 
 **Required Features**
-- [ ] Exercise chart
-- [ ] Delete exercise data (all and specifics)
-- [ ] Exercise Examples and details
-- [ ] Calorie counter
-- [ ] Delete Calorie data (all and specifics)
-- [ ] Food recommendations & details
+- [x] Delete exercise data (all and specifics)
+- [x] Exercise Examples and details
+- [x] Calorie counter
+- [x] Delete Calorie data (all and specifics)
+- [x] Food recommendations & details
 - [x] Sleep Tracker
 - [x] Delete Sleep data (all and specifics)
-- [ ] User Page Overview
 - [x] All data delete
+- [x] API parameters added in
 
 **Stretch Features**
+- [ ] User Page Overview
+- [x] Partial logic check for API feeling to grab
 - [ ] Weekly Activity & Exercise Details
 - [ ] Lap counter
 - [ ] Gps gym location
 - [ ] User account stored online
+- [ ] Exercise chart
 
 ### 2. Screen Archetypes
 
