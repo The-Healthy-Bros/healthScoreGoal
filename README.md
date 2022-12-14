@@ -122,3 +122,7 @@ Fifth week update gif:
 
 <img src="healthWeek5.gif" title='Fifth update' width='' alt='Fifth gif update'>
 
+Final week update gif:
+
+<img src="finalWeekGif.gif" title='Final update' width='' alt='Final gif update'>
+
